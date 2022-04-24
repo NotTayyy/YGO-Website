@@ -28,19 +28,15 @@ body {
     background-color: rgb(9, 24, 139);
 }
 
-.clearfix {
-    display: block;
-}
 
 .main-navigation {
-    width: 100%;
     text-align: center;
 }
 
 #site-navigation {
     -webkit-box-shadow: 0 0 2px rgb(0 0 0 / 10%) inset;
     box-shadow: 0 0 2px rgb(0 0 0 / 10%) inset;
-    position: relative;
+ 
     background-color: #232323;
     border-top: 4px solid #289dcc;
 }
@@ -49,8 +45,21 @@ li {
     float: left;
     list-style-type: none;
     padding: 5px 10px 5px 10px;
-
 }
+
+.colomn {
+    float: left;
+}
+
+
+.box {
+    background-color: red;
+     border: 2px;
+}
+
+
+
+
 /*.clearfix:after{visibility:hidden;
         display:block;
         font-size:0;
