@@ -39,11 +39,22 @@ body {
 li {
     float: left;
     list-style-type: none;
-    padding: 5px 15px 5px 15px;
+    top: -50px;
+    
+}
+
+ul li a { 
+    text-decoration: none; 
+    color: #bbb8b8;  
+    display: block;
+    width: fit-content;
+    padding: 29px 18px 22px 18px;
+    
 }
 
 ul {
     padding-inline-start: 0px;
+    margin-top: -2px;
 }
 
 .Nav-Container {
@@ -58,6 +69,9 @@ ul {
 
 }
 
+    
+
+
 .empty-colomn {
     flex-grow: 2;  
 
@@ -65,11 +79,14 @@ ul {
 
 .box {
     background-color: rgb(24, 24, 24);
-     border: 2px;
+    border: 2px;
 }
 
-a { text-decoration: none; color: #bbb8b8;}
 
+a:hover {
+    color: #3bb4e4;
+    background-color: #0a3c50;
+}
 .nav-button {
     width: 45px;
     padding: 15px 5px 15px 10px;
