@@ -48,7 +48,7 @@ ul li a {
     color: #bbb8b8;  
     display: block;
     width: fit-content;
-    padding: 29px 18px 22px 18px;
+    padding: 29px 18px 21px 18px;
     
 }
 
@@ -89,7 +89,7 @@ a:hover {
 }
 .nav-button {
     width: 45px;
-    padding: 15px 5px 15px 10px;
+    padding: 15px 0px 15px 10px;
     border-top: 4px solid #E0784E;
     opacity: 75%;
     filter: invert();
@@ -105,5 +105,9 @@ input {
     border-top: 4px solid #16759b;
     font-family: Roboto,Helvetica,sans-serif;
     outline: none;
-    width: 250px;
+    width: 200px;
+}
+
+.search {
+    padding-left: 0px;
 }
