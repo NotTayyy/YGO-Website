@@ -67,9 +67,6 @@ ul {
 
 }
 
-    
-
-
 .empty-colomn {
     flex-grow: 2;  
 
@@ -80,10 +77,9 @@ ul {
     border: 2px;
 }
 
-
-a:hover {
-    color: #3bb4e4;
-    background-color: #0a3c50;
+a.hilight:hover {
+    color: #59c1eb;
+    background-color: #024058;
 }
 .nav-button {
     width: 45px;
