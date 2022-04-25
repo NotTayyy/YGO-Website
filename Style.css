@@ -50,7 +50,7 @@ input {
     width: 200px;
 }
 
-a.hilight:hover {
+a.highlight:hover {
     color: #59c1eb;
     background-color: #024058;
 }
