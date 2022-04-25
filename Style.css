@@ -119,13 +119,21 @@ input {
 }
 
 .header-overlay {
-    display: flex;
-    height: 500px;
-    width: fit-content;
+    display: block;
+    height: 450px;
+    width: auto;
     text-align: center;
-    margin: 0 auto;
+    background-image: url("Images/Screenshot_6.jpg");
+    background-repeat: no-repeat;
+}
+
+.header-text {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("Images\Screenshot_6.jpg");
-    z-index: 1;
+    height: 450px;
+    color: rgb(247, 243, 239);
+    font-size: 32px;
+    background-color: #0a0a0aa8;
 }
+
