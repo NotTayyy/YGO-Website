@@ -1,42 +1,37 @@
 .page-background {
     opacity: 1;
-    position: absolute;
-    background-position: 0%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: auto;
-    z-index: -10;
-    
+    z-index: +10;
 }
 
 .Logo {
-    width: 65px;
+    width: 70px;
     margin: 0px;
     padding: 0px;
-    border: 0px;
+    border-top: 4px solid #3bb4e4;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+header {
+    font-size: large;
 }
 
 body {
-    margin-top: 0px;
-    width: 50%;
-    position: inherit;
-    vertical-align: middle;
-
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://www.yugioh.com/assets/bg-promo-section-237e067c16791583e997098e069abb89.png");
 }
-.body-wrap {
+
+#body-wrap {
     background-color: rgb(9, 24, 139);
 }
 
-
 .main-navigation {
-    text-align: center;
+    text-align: left;
+    vertical-align: middle;
 }
 
-#site-navigation {
-    -webkit-box-shadow: 0 0 2px rgb(0 0 0 / 10%) inset;
-    box-shadow: 0 0 2px rgb(0 0 0 / 10%) inset;
- 
+#site-navigation { 
     background-color: #232323;
     border-top: 4px solid #289dcc;
 }
@@ -44,28 +39,54 @@ body {
 li {
     float: left;
     list-style-type: none;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 15px 5px 15px;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+.Nav-Container {
+    display: flex;
+    height: 75px;
+
 }
 
 .colomn {
-    float: left;
+    flex-grow: 1;
+    padding-top: 2px;
+
 }
 
+.empty-colomn {
+    flex-grow: 2;  
+
+}
 
 .box {
-    background-color: red;
+    background-color: rgb(24, 24, 24);
      border: 2px;
 }
 
+a { text-decoration: none; color: #bbb8b8;}
 
+.nav-button {
+    width: 45px;
+    padding: 15px 5px 15px 10px;
+    border-top: 4px solid #E0784E;
+    opacity: 75%;
+    filter: invert();
+}
 
-
-/*.clearfix:after{visibility:hidden;
-        display:block;
-        font-size:0;
-        content:" ";
-        clear:both;
-        height:0}
-.clearfix{display:inline-block}* html 
-.clearfix{height:1%}
-.clearfix{display:block} */
+input {
+    background-color: transparent;
+    padding: 15px 10px 15px 5px;
+    height: 75px;
+    color: white;
+    font-size: 22px;
+    border: 0;
+    border-top: 4px solid #16759b;
+    font-family: Roboto,Helvetica,sans-serif;
+    outline: none;
+    width: 250px;
+}
