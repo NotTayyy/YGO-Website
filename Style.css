@@ -8,7 +8,7 @@ body {
     color: rgb(53, 53, 53);
     font-size: 20px;
     background: rgb(28, 28, 28);
-    
+    min-height: 100vh;
 }
 
 p {
@@ -18,7 +18,7 @@ p {
 li {
     float: left;
     list-style-type: none;
-    
+
 }
 
 ul {
@@ -53,7 +53,7 @@ a.highlight:hover {
     text-align: center;
 }
 
-#site-navigation { 
+#site-navigation {
     background-color: #232323;
     border-top: 4px solid #289dcc;
 }
@@ -101,7 +101,7 @@ a.highlight:hover {
 }
 
 .empty-colomn {
-    flex-grow: 2;  
+    flex-grow: 2;
 
 }
 
@@ -117,7 +117,7 @@ a.highlight:hover {
     border-top: 4px solid #E0784E;
     opacity: 75%;
     filter: invert();
-    background: url("Images/207632-200.png");
+    background: url("Images/Draw_button.png");
     background-size: 60px 55px;
     background-repeat: no-repeat;
     background-position: center;
@@ -127,9 +127,9 @@ a.highlight:hover {
     padding-left: 0px;
 }
 
-.top-navigation-bar { 
-    text-decoration: none; 
-    color: #bbb8b8;  
+.top-navigation-bar {
+    text-decoration: none;
+    color: #bbb8b8;
     display: block;
     width: fit-content;
     padding: 29px 18px 21px 18px;
@@ -175,16 +175,22 @@ a.highlight:hover {
 
 .footer-middle {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    height: 30px;
+
 }
 
 .footer-navigation {
-    /* text-decoration: none; */
     color: #bbb8b8;
     font-size: 20px;
 }
 
 .padding {
     padding: 0 20px;
+    text-decoration: none;
+}
+
+.social-media-button {
+    text-decoration: none;
 }
