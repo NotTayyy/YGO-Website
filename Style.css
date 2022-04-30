@@ -5,7 +5,6 @@ header {
 body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
     color: rgb(53, 53, 53);
     font-size: 20px;
     background: rgb(20, 20, 20);
@@ -19,16 +18,6 @@ p {
 li {
     float: left;
     list-style-type: none;
-    top: -50px;
-    
-}
-
-ul li a { 
-    text-decoration: none; 
-    color: #bbb8b8;  
-    display: block;
-    width: fit-content;
-    padding: 29px 18px 21px 18px;
     
 }
 
@@ -61,6 +50,7 @@ a.highlight:hover {
     width: 80%;
     margin: 0 auto;
     border: 2px solid rgb(233, 233, 233);
+    text-align: center;
 }
 
 #site-navigation { 
@@ -71,11 +61,11 @@ a.highlight:hover {
 #footer {
     width: auto;
     background-color: rgb(20, 20, 20);
-    display: flex;
-    justify-content: center;
     padding: 5px;
     color: rgb(228, 228, 228);
     border-top: 2px solid #ececec;
+    display: block;
+
 }
 
 .page-background {
@@ -85,6 +75,7 @@ a.highlight:hover {
 
 .Logo {
     width: 70px;
+    max-width: 70px;
     margin: 0px;
     padding: 0px;
     border-top: 4px solid #3bb4e4;
@@ -136,6 +127,14 @@ a.highlight:hover {
     padding-left: 0px;
 }
 
+.top-navigation-bar { 
+    text-decoration: none; 
+    color: #bbb8b8;  
+    display: block;
+    width: fit-content;
+    padding: 29px 18px 21px 18px;
+}
+
 .header-overlay {
     display: block;
     height: 450px;
@@ -155,3 +154,35 @@ a.highlight:hover {
     background-color: #0a0a0aa8;
 }
 
+.footer-base {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.footer-top{
+    display: flex;
+    align-items: center;
+}
+
+.footer-bottom{
+    font-size: smaller;
+    color: #6e6e6e;
+    padding-top: 25px;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-navigation {
+    /* text-decoration: none; */
+    color: #bbb8b8;
+    font-size: 20px;
+}
+
+.padding {
+    padding: 0 20px;
+}
