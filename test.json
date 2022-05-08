@@ -1,0 +1,137 @@
+{
+    "data": [
+        {
+            "id": 1861630,
+            "name": "Decode Talker",
+            "type": "Link Monster",
+            "desc": "2+ Effect Monsters\r\nGains 500 ATK for each monster it points to. When your opponent activates a card or effect that targets a card(s) you control (Quick Effect): You can Tribute 1 monster this card points to; negate the activation, and if you do, destroy that card.",
+            "atk": 2300,
+            "race": "Cyberse",
+            "attribute": "DARK",
+            "archetype": "Code Talker",
+            "linkval": 3,
+            "linkmarkers": [
+                "Top",
+                "Bottom-Left",
+                "Bottom-Right"
+            ],
+            "card_sets": [
+                {
+                    "set_name": "Duel Devastator",
+                    "set_code": "DUDE-EN023",
+                    "set_rarity": "Ultra Rare",
+                    "set_rarity_code": "(UR)",
+                    "set_price": "2.42"
+                },
+                {
+                    "set_name": "Duel Power",
+                    "set_code": "DUPO-EN106",
+                    "set_rarity": "Ultra Rare",
+                    "set_rarity_code": "(UR)",
+                    "set_price": "1.83"
+                },
+                {
+                    "set_name": "OTS Tournament Pack 6",
+                    "set_code": "OP06-EN001",
+                    "set_rarity": "Ultimate Rare",
+                    "set_rarity_code": "(UtR)",
+                    "set_price": "39.95"
+                },
+                {
+                    "set_name": "Star Pack VRAINS",
+                    "set_code": "SP18-EN031",
+                    "set_rarity": "Starfoil Rare",
+                    "set_rarity_code": "(SFR)",
+                    "set_price": "2.67"
+                },
+                {
+                    "set_name": "Starter Deck: Codebreaker",
+                    "set_code": "YS18-EN043",
+                    "set_rarity": "Common",
+                    "set_rarity_code": "(C)",
+                    "set_price": "0.98"
+                },
+                {
+                    "set_name": "Starter Deck: Link Strike",
+                    "set_code": "YS17-EN041",
+                    "set_rarity": "Ultra Rare",
+                    "set_rarity_code": "(UR)",
+                    "set_price": "1.5"
+                }
+            ],
+            "card_images": [
+                {
+                    "id": 1861630,
+                    "image_url": "https://storage.googleapis.com/ygoprodeck.com/pics/1861630.jpg",
+                    "image_url_small": "https://storage.googleapis.com/ygoprodeck.com/pics_small/1861630.jpg"
+                },
+                {
+                    "id": 1861629,
+                    "image_url": "https://storage.googleapis.com/ygoprodeck.com/pics/1861629.jpg",
+                    "image_url_small": "https://storage.googleapis.com/ygoprodeck.com/pics_small/1861629.jpg"
+                }
+            ],
+            "card_prices": [
+                {
+                    "cardmarket_price": "0.09",
+                    "tcgplayer_price": "0.17",
+                    "ebay_price": "2.99",
+                    "amazon_price": "0.25",
+                    "coolstuffinc_price": "0.25"
+                }
+            ]
+        }
+    ]
+}
+{
+    "data": [
+        {
+            "id": 66023650,
+            "name": "Folgo, Justice Fur Hire",
+            "type": "Link Monster",
+            "desc": "3 monsters with different Types\r\nCannot be used as Link Material. If this card is Link Summoned: You can Special Summon 1 monster \"Fur Hire\" with a different Type from the 3 monsters used for the Link Summon, from your Deck in Defense Position. If a card(s) your opponent controls is destroyed by battle or card effect: You can draw 1 card, then if you control 3 or more monsters \"Fur Hire\" with different names, draw 2 additional cards. You can only use each effect of \"Folgo, Justice Fur Hire\" once per turn.",
+            "atk": 2400,
+            "race": "Beast",
+            "attribute": "DARK",
+            "archetype": "Fur Hire",
+            "linkval": 3,
+            "linkmarkers": [
+                "Top",
+                "Bottom-Left",
+                "Bottom-Right"
+            ],
+            "card_sets": [
+                {
+                    "set_name": "2019 Gold Sarcophagus Tin Mega Pack",
+                    "set_code": "MP19-EN190",
+                    "set_rarity": "Rare",
+                    "set_rarity_code": "(R)",
+                    "set_price": "1.16"
+                },
+                {
+                    "set_name": "Soul Fusion",
+                    "set_code": "SOFU-EN047",
+                    "set_rarity": "Super Rare",
+                    "set_rarity_code": "(SR)",
+                    "set_price": "1.4"
+                }
+            ],
+            "card_images": [
+                {
+                    "id": 66023650,
+                    "image_url": "https://storage.googleapis.com/ygoprodeck.com/pics/66023650.jpg",
+                    "image_url_small": "https://storage.googleapis.com/ygoprodeck.com/pics_small/66023650.jpg"
+                }
+            ],
+            "card_prices": [
+                {
+                    "cardmarket_price": "0.12",
+                    "tcgplayer_price": "0.24",
+                    "ebay_price": "1.25",
+                    "amazon_price": "0.59",
+                    "coolstuffinc_price": "0.49"
+                }
+            ]
+        }
+    ]
+}

@@ -7,8 +7,4 @@ document.getElementById("headeroverlay").style.backgroundImage = headerBG[random
 
 
 
-
-
-
-
-
+//Main Seach Loop Uses a Function to Take the Param of the Search box in order to search the Api For A Name.
