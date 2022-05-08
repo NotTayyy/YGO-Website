@@ -140,7 +140,7 @@ a.highlight:hover {
     height: 450px;
     width: auto;
     text-align: center;
-    background-image: url("Images/Header/Header-Background-1.jpg");
+    background-image: url("Images/Header/Header-Background-7.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -193,4 +193,30 @@ a.highlight:hover {
 
 .social-media-button {
     text-decoration: none;
+}
+
+.cardshowcase {
+    margin: 50px 0;
+    background-color: rgb(129, 129, 129);
+    display: flex;
+    height: 380px;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.randomcard {
+    background-color: rgb(180, 180, 180);
+    height: 350px;
+    width: 400px;
+
+
+}
+
+.popularcard {
+    background-color: rgb(241, 200, 200);
+    height: 350px;
+    width: 400px;
+
 }
