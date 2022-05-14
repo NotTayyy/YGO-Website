@@ -125,6 +125,8 @@ a.highlight:hover {
     outline: none;
     width: 240px;
     border-top: 4px solid #16759b;
+    appearance: auto;
+    box-sizing: border-box;
 }
 
 .top-navigation-bar {
