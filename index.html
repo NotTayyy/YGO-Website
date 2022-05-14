@@ -6,6 +6,7 @@
     <link type="text/css" href="Style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="Images/Tmp_Logo.png">
     <meta name="description" content="An ambitious YGO Combo/Search/Summon/Discard Glossary System">
+    
 </head>
 
 <body>
@@ -45,9 +46,10 @@
 
         </div>
     </nav>
-    <form action="" style="display: flex;">
-        <input class="nav-button" type="submit" name="search" value="">
-        <input type="search" class="search" name="search" value="" placeholder="I Draw...!" autocomplete="off" />
+    <!-- Add an On Click for this So that it can Search from the Api -->
+    <form id="SearchBoxMainNav" style="display: flex;">
+        <input class="nav-button" type="submit" name="search" value="" >
+        <input id="SearchTerm" type="text" class="search" name="search" value="" placeholder="I Draw...!" autocomplete="off" />
     </form>
     <a href="https://twitter.com/NotTayyy" target="_blank">
         <img style="width: 70px"  src="Images/Twitter.png" alt="">
