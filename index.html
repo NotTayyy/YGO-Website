@@ -18,49 +18,45 @@
     </a>
 
     <nav id="site-navigation" class="main-navigation">
-        <div class="search-boxes-top colomn">
-            <ul>
-                <li>
-                    <a class="top-navigation-bar" href="index.html">Home</a>
-                </li>
-                <li>
-                    <a class="top-navigation-bar" href="search.html">Search</a>
-                </li>
-                <li>
-                    <a class="top-navigation-bar" href="send.html">Send</a>
-                </li>
-                <li>
-                    <a class="top-navigation-bar" href="summon.html">Summon</a>
-                </li>
-                <li>
-                    <a class="top-navigation-bar" href="more.html">More...</a>
-                </li>
-                <li>
-                    <a class="top-navigation-bar" href="card_lookup.html">Card lookup</a>
-                </li>
-                <li>
-                    <a class="top-navigation-bar" href="rulings.html">Rulings</a>
-                </li>
-
-            </ul>
-
-        </div>
+     <div class="colomn">
+        <ul>
+            <li>
+                <a class="top-navigation-bar highlight" href="index.html">Home</a>
+            </li>
+            <li>
+                <a class="top-navigation-bar highlight" href="search.html">Search</a>
+            </li>
+            <li>
+                <a class="top-navigation-bar highlight" href="send.html">Send</a>
+            </li>
+            <li>
+                <a class="top-navigation-bar highlight" href="summon.html">Summon</a>
+            </li>
+            <li>
+                <a class="top-navigation-bar highlight" href="more.html">More...</a>
+            </li>
+            <li>
+                <a class="top-navigation-bar highlight" href="card_lookup.html">Card lookup</a>
+            </li>
+            <li>
+                <a class="top-navigation-bar highlight" href="rulings.html">Rulings</a>
+            </li>
+        </ul>
+     </div>
     </nav>
-    <!-- Add an On Click for this So that it can Search from the Api -->
     <form id="SearchBoxMainNav" style="display: flex;">
         <input class="nav-button" type="submit" name="search" value="" >
-        <input id="SearchTerm" type="text" class="search" name="search" value="" placeholder="I Draw...!" autocomplete="off" />
+        <input class="SearchField" type="text" name="search"  value="" id="SearchTerm"  placeholder="I Draw...!" autocomplete="off" />
     </form>
     <a href="https://twitter.com/NotTayyy" target="_blank">
         <img style="width: 70px"  src="Images/Twitter.png" alt="">
     </a>
     <div class="empty-colomn"></div>
 
-</div>
+    </div>
 </header>
 
 <div class="header-overlay" id="headeroverlay">
-    <!-- In the Future This shouls show a Random card from the Database-->
     <div class="header-text">
         <h1>Yu-Gi-Oh! Combo Database!</h1>
     </div>
@@ -68,12 +64,12 @@
 
 <div style="background-image: url(Images/Background-tile.jpg);">
     <div id="body-wrap">
-        <h1 style="font-size: 38px;">The Ultimate Yu-Gi-Oh! Combo Tool Website!</h1>
-        <p style="font-size: 30px;">An ambitious project to create a website that allows you to create and find combos in a more intuitive manner!</p>
-    <br>
-        <p>This site aims to allow you to see every card that Searches, Sends, Summons, Discards, Mills, Spins, Bounces ETC Other Cards in your or your opponents deck!</p>
-        <p>I will be working on this website slowly over time the back end is going to be a pain but I will dabble in back ewnd as much as I can to get this done</p>
-        <p>This is very ambitious for me as im doing this mostly by myself and with little knowledge, so at the same time im studying im working on this website and hopefully
+        <h1 style="font-size: 42px;">The Ultimate Yu-Gi-Oh! Combo Tool Website!</h1>
+        <p style="font-size: 36px;">An ambitious project to create a website that allows you to create and find combos in a more intuitive manner!</p>
+            <br>
+        <p>This site aims to allow you to see every card that Searches, Sends, Summons, Discards, Mills, Spins, Bounces ETC Other Cards in your or your opponents deck!
+        I will be working on this website slowly over time the back end is going to be a pain but I will dabble in back ewnd as much as I can to get this done.
+        This is very ambitious for me as im doing this mostly by myself and with little knowledge, so at the same time im studying im working on this website and hopefully
         by the time I get decently through this I hope I can get an actual coding Job using this as a portfolio of sorts and a pet project!</p>      
       <div class="cardshowcase">
         <div class="randomcard">
@@ -85,7 +81,10 @@
         </div>
       </div>
       <div class="News">
-          
+          <!--Shows like 5 Of The latest YGO - News at the Bottom of the Page -->
+      </div>
+      <div class="TwitterShowcase">
+            <!-- Shows this Twitter Timeline of @YuGiOhNewsTCG -->
       </div>
     </div>
 </div>
@@ -126,7 +125,7 @@
                 </li>
              </ul>
             </div>
-            <div class="empty-colomn"></div>
+        <div class="empty-colomn"></div>
             <div>
              <ul>
                 <li class="padding">
