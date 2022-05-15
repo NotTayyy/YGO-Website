@@ -86,13 +86,13 @@ a.highlight:hover {
 
 }
 
-.colomn {
+.column {
     flex-grow: 1;
     padding-top: 2px;
 
 }
 
-.empty-colomn {
+.empty-column {
     flex-grow: 2;
 
 }

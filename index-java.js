@@ -3,11 +3,11 @@ const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", 
 let randomBGNumber = Math.floor(Math.random() * headerBG.length);
 
 document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
-//-- End of Ranzomizaton
+//-- End of Randomization
 
 
 
-//Main Seach Loop Uses a Function to Take the Param of the Search box in order to search the Api For A Name.
+//Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For A Name.
 const apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=';
 
 SearchBoxMainNav.addEventListener('submit', async(event) => {
@@ -23,6 +23,6 @@ try {
 
 } catch { alert("ERROR Please submit a Yu-Gi-Oh Card Name!"); 
 //----in the future When the user types into the Search box, It will auto update a Dropdown menu populated with the first 5 options from the array 
-//----that shows up so if you type in b a ccunction will call this code and pull whatever arrray it returns then taking the first 45 items from 
-//----the array it will populate the Dropdown withh those 5, Making them Clickable and Making it ewasier to find the correct card
+//----that shows up so if you type in "b" a function will call this code and pull whatever array it returns then taking the first 5 items from 
+//----the array it will populate the Dropdown with those 5, Making them Clickable and Making it easier to find the correct card
 }});
