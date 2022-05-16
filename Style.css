@@ -51,7 +51,7 @@ a.highlight:hover {
 
 #site-navigation {
     background-color: #232323;
-    border-top: 4px solid #289dcc;
+    /* border-top: 4px solid #289dcc; */
 }
 
 #footer {
@@ -74,7 +74,7 @@ a.highlight:hover {
     max-width: 70px;
     margin: 0px;
     padding: 0px;
-    border-top: 4px solid #3bb4e4;
+    /* border-top: 4px solid #3bb4e4; */
     padding-right: 5px;
     padding-bottom: 2px;
 }
@@ -107,14 +107,14 @@ a.highlight:hover {
 }
 
 .nav-button {
-    width: 45px;
+    width: 55px;
     height: 75px;
-    padding: 15px 0px 15px 10px;
-    border-top: 4px solid #e0784e;
+    padding: 30px;
+    /* border-top: 4px solid #e0784e; */
     opacity: 75%;
     filter: invert();
     background: url("Images/Draw_button.png");
-    background-size: 60px 55px;
+    background-size: 45px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -125,14 +125,14 @@ a.highlight:hover {
 
 .SearchField {
     background-color: transparent;
-    padding: 15px 10px 15px 5px;
+    padding: 5px 10px 5px 5px;
     height: 75px;
     color: white;
-    font-size: 22px;
+    font-size: 35px;
     font-family: Roboto,Helvetica,sans-serif;
     outline: none;
     width: 240px;
-    border-top: 4px solid #16759b;
+    /* border-top: 4px solid #16759b; */
     appearance: auto;
     box-sizing: border-box;
 }
@@ -142,7 +142,7 @@ a.highlight:hover {
     color: #bbb8b8;
     display: block;
     width: fit-content;
-    padding: 29px 18px 24px 18px;
+    padding: 29px 18px 28px 18px;
     line-height: 1;
 }
 
@@ -170,6 +170,7 @@ a.highlight:hover {
     display: flex;
     flex-direction: column;
     margin: 25px;
+    align-items: center;
 }
 
 .footer-top{
