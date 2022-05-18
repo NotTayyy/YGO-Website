@@ -34,14 +34,13 @@ function cardSearch(input) {
     }
   }
   console.log(result);
-
   return result;
 }
-//-- Updates the Text Whenever an Input is made to the Text Field
-var inputlog = document.getElementById("placeholder");
 
+//-- Updates the Text Whenever an Input is made to the Text Field
 SearchBoxMainNav.addEventListener('input', async(event) =>{
   var input = document.getElementById('SearchTerm').value;
+  var inputlog = document.getElementById("placeholder");
   inputlog.innerHTML = "";
   if (input != "") {
     var result = cardSearch(input);
