@@ -1,5 +1,7 @@
 //--Randomization Of The Header Background Image
-const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", "url(Images/Header/HBG3.jpg)", "url(Images/Header/HBG4.jpg)", "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)"];
+const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", "url(Images/Header/HBG3.jpg)", "url(Images/Header/HBG4.jpg)", 
+  "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", 
+  "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)"];
 let randomBGNumber = Math.floor(Math.random() * headerBG.length);
 
 document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
@@ -22,6 +24,47 @@ document.getElementById("headeroverlay").style.backgroundImage = headerBG[random
 //  } catch { alert("ERROR Please submit a Yu-Gi-Oh Card Name!"); 
 //  }});
 //------------------------------------------------
+
+
+//---- Fetches the Api for Global Use
+let cardAPIListings = null;
+getTemp();
+
+function getTemp(){
+	fetch('https://nottayyy.github.io/YGO-JSON-GITHUB-REPO/cardinfo.json')
+		.then(function(response) {
+			return response.json();
+})
+		.then(function(data) {
+		 	cardAPIListings = data;
+			console.log(cardAPIListings);
+			RandomCard();
+		});
+}
+
+
+
+//--- Grab a Random Card and Show it on the Page with its image
+function RandomCard() {
+  const RC = Math.floor(Math.random() * cardAPIListings.data.length);
+  var cardShowcase = document.getElementById("randomcardshowcase");
+  var randomCardImage = document.getElementById('randomImage');
+  if( (cardAPIListings.data[RC].type === "Spell Card") || (cardAPIListings.data[RC].type ==="Trap Card")) {
+    cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + '<br><br>' + 'Type:  ' + cardAPIListings.data[RC].type + '<br>' +
+     ' Race: ' + cardAPIListings.data[RC].race + '<br><br>' +  'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
+    
+    randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+  } else {
+    cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+    ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
+    cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+    cardAPIListings.data[RC].atk + ' Def: ' + cardAPIListings.data[RC].def;
+
+    randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+  }
+  //Need to make Different If Statments For different Type of Cards with Different stuff like [Links dont have DEF And need their link arrows and Link number shown,
+  // Xyz has Rank instead of level, Pendulum needs their Scales Etc...]
+}
 
 //-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For A Name.
 function cardSearch(input) {
@@ -54,11 +97,14 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
 SearchBoxMainNav.addEventListener('submit', async(event) => {
   event.preventDefault();
   var searchText = document.getElementById('SearchTerm').value;
-  var result = cardSearch(searchText);
-  
+  var result = cardSearch(searchText); 
   if (result.length == 0) {
     alert("ERROR Please submit a Yu-Gi-Oh Card Name!" + result.length);
   } else {
-    alert('Name: ' + result[0].name + '\n\n' + 'Type: ' + result[0].type + '\n\n' + 'Description: ' + result[0].desc + '\n\n' + 'Length: ' + result.length);
+    alert('Name: ' + result[0].name + '\n\n' + 'Type: ' + result[0].type + '\n\n' + 'Description: ' + result[0].desc 
+            + '\n\n' + 'Length: ' + result.length);
   }
 });
+
+
+
