@@ -14,6 +14,7 @@ body {
     background: rgb(28, 28, 28);
     min-height: 100vh;
     line-height: 1.4;
+    overflow: overlay;
 }
 
 p {
@@ -153,6 +154,8 @@ a.highlight:hover {
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    margin-top: 75px;
 }
 
 
@@ -208,26 +211,41 @@ a.highlight:hover {
 
 .cardshowcase {
     margin: 50px 25px;
-    background-color: rgb(129, 129, 129);
+    /* background-color: rgb(134, 126, 255); */
     display: flex;
-    height: 380px;
+    height: 1115px;
     width: auto;
-    flex-direction: row;
+    padding: 0 5px;
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
 }
 
 .randomcard {
-    background-color: rgb(180, 180, 180);
-    height: 350px;
-    width: 700px;
+    /* background-color: rgb(65, 52, 245); */
+    height: 550px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/dd6hhft-d09c0a51-dc22-43e0-b4c4-9d426fb7c14a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGQ2aGhmdC1kMDljMGE1MS1kYzIyLTQzZTAtYjRjNC05ZDQyNmZiN2MxNGEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rFUrNSDar1CwY76UDGRqCp1oBOP2Mi5j3lUXggjHz2c");
+    background-color: rgba(0, 0, 0, 0.253);
+    border: 10px ridge grey;
+}
+#randomTextBG {
+    background-color: rgba(19, 19, 19, 0.315);
+}
+#randomcardshowcase {
+    text-align: left;
+    position: relative;
+    width:fit-content;
+}
 
-
+#randomImage {
+    height: 550px;
 }
 
 .popularcard {
     background-color: rgb(241, 200, 200);
-    height: 350px;
-    width: 700px;
-
+    height: 550px;
+    width: auto;
 }
