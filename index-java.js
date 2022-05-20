@@ -49,21 +49,58 @@ function RandomCard() {
   const RC = Math.floor(Math.random() * cardAPIListings.data.length);
   var cardShowcase = document.getElementById("randomcardshowcase");
   var randomCardImage = document.getElementById('randomImage');
-  if( (cardAPIListings.data[RC].type === "Spell Card") || (cardAPIListings.data[RC].type ==="Trap Card")) {
-    cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + '<br><br>' + 'Type:  ' + cardAPIListings.data[RC].type + '<br>' +
-     ' Race: ' + cardAPIListings.data[RC].race + '<br><br>' +  'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
+  switch (cardAPIListings.data[RC].type) {
+    case "Spell Card":
+    case "Trap Card":
+      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + '<br><br>' + 'Type:  ' + cardAPIListings.data[RC].type + '<br>' +
+      ' Race: ' + cardAPIListings.data[RC].race + '<br><br>' +  'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
+      
+      randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+    break;
+  
+    case "Effect Monster":
+    case "Fusion Monster":
+    case "Normal Monster":
+      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardAPIListings.data[RC].atk + '  / Def: ' + cardAPIListings.data[RC].def;
+  
+      randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+    break;
+  
+    case "XYZ Monster":
+      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Rank: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardAPIListings.data[RC].atk + ' / Def: ' + cardAPIListings.data[RC].def;
+  
+      randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+    break;
     
-    randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
-  } else {
-    cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
-    ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
-    cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
-    cardAPIListings.data[RC].atk + ' Def: ' + cardAPIListings.data[RC].def;
-
-    randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+    case "Pendulum Effect Monster":
+      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardAPIListings.data[RC].atk + ' / Def: ' + cardAPIListings.data[RC].def + ' / Scale: ' + cardAPIListings.data[RC].scale;
+  
+      randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+    break;
+    
+    case "Link Monster":
+      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardAPIListings.data[RC].atk + ' / Link-Rating: ' + cardAPIListings.data[RC].linkval + '\n' + 'Markers: ' + cardAPIListings.data[RC].linkmarkers;
+  
+      randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+    break;
+  
+    case "Skill Card":
+    default:
+      RandomCard()
+    break;
   }
-  //Need to make Different If Statments For different Type of Cards with Different stuff like [Links dont have DEF And need their link arrows and Link number shown,
-  // Xyz has Rank instead of level, Pendulum needs their Scales Etc...]
 }
 
 //-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For A Name.
