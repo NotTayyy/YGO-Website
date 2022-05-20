@@ -7,6 +7,10 @@ let randomBGNumber = Math.floor(Math.random() * headerBG.length);
 document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
 //-- End of Randomization
 
+//--Resets Scroll Position To Top of page on reload
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 //--------------------I Was using this for API Calls, Might use again for api Calls after learning Back End
 //  const FapiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=';
@@ -52,8 +56,9 @@ function RandomCard() {
   switch (cardAPIListings.data[RC].type) {
     case "Spell Card":
     case "Trap Card":
-      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + '<br><br>' + 'Type:  ' + cardAPIListings.data[RC].type + '<br>' +
-      ' Race: ' + cardAPIListings.data[RC].race + '<br><br>' +  'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
+      cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + '<br><br>' +  
+      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
       
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
     break;
@@ -61,37 +66,37 @@ function RandomCard() {
     case "Effect Monster":
     case "Fusion Monster":
     case "Normal Monster":
-      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
-      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
-      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
       cardAPIListings.data[RC].atk + '  / Def: ' + cardAPIListings.data[RC].def;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
     break;
   
     case "XYZ Monster":
-      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Rank: ' + cardAPIListings.data[RC].level + '<br><br>' +  
-      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
-      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + ' Rank: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
       cardAPIListings.data[RC].atk + ' / Def: ' + cardAPIListings.data[RC].def;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
     break;
     
     case "Pendulum Effect Monster":
-      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
-      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
-      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
+      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + cardAPIListings.data[RC].desc.replace(/\n/g, "<br />") + '<br><br>' + ' Atk: ' +
       cardAPIListings.data[RC].atk + ' / Def: ' + cardAPIListings.data[RC].def + ' / Scale: ' + cardAPIListings.data[RC].scale;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
     break;
     
     case "Link Monster":
-      cardShowcase.innerHTML = 'Name: ' + '\"' +cardAPIListings.data[RC].name + '\"' + ' Level: ' + cardAPIListings.data[RC].level + '<br><br>' +  
-      ' Type: ' + '[' + cardAPIListings.data[RC].type + ']' + ' Race:  ' + cardAPIListings.data[RC].race + '<br>' + 'Attribute: ' + 
-      cardAPIListings.data[RC].attribute + '<br><br>' + 'Description: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
-      cardAPIListings.data[RC].atk + ' / Link-Rating: ' + cardAPIListings.data[RC].linkval + '\n' + 'Markers: ' + cardAPIListings.data[RC].linkmarkers;
+      cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + '/ Link-Rating: ' + cardAPIListings.data[RC].linkval + '<br><br>' +  
+      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+      cardAPIListings.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
+      cardAPIListings.data[RC].atk + '' + 'Markers: ' + cardAPIListings.data[RC].linkmarkers;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
     break;
