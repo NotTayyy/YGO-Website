@@ -52,7 +52,6 @@ a.highlight:hover {
 
 #site-navigation {
     background-color: #232323;
-    /* border-top: 4px solid #289dcc; */
 }
 
 #footer {
@@ -75,7 +74,6 @@ a.highlight:hover {
     max-width: 70px;
     margin: 0px;
     padding: 0px;
-    /* border-top: 4px solid #3bb4e4; */
     padding-right: 5px;
     padding-bottom: 2px;
 }
@@ -88,7 +86,8 @@ a.highlight:hover {
 .Nav-Container {
     display: flex;
     height: 75px;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .column {
@@ -111,7 +110,6 @@ a.highlight:hover {
     width: 55px;
     height: 75px;
     padding: 30px;
-    /* border-top: 4px solid #e0784e; */
     opacity: 75%;
     filter: invert();
     background: url("Images/Draw_button.png");
@@ -133,7 +131,6 @@ a.highlight:hover {
     font-family: Roboto,Helvetica,sans-serif;
     outline: none;
     width: 240px;
-    /* border-top: 4px solid #16759b; */
     appearance: auto;
     box-sizing: border-box;
 }
@@ -211,7 +208,6 @@ a.highlight:hover {
 
 .cardshowcase {
     margin: 50px 25px;
-    /* background-color: rgb(134, 126, 255); */
     display: flex;
     height: 1115px;
     width: auto;
@@ -221,7 +217,6 @@ a.highlight:hover {
 }
 
 .randomcard {
-    /* background-color: rgb(65, 52, 245); */
     height: 550px;
     width: auto;
     display: flex;
@@ -233,6 +228,7 @@ a.highlight:hover {
 }
 #randomTextBG {
     background-color: rgba(19, 19, 19, 0.315);
+    width: 100%;
 }
 #randomcardshowcase {
     text-align: left;
