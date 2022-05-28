@@ -1,11 +1,10 @@
 //--Randomization Of The Header Background Image
 const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", "url(Images/Header/HBG3.jpg)", "url(Images/Header/HBG4.jpg)", 
   "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", 
-  "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)"];
+  "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)", "url(Images/Header/HBG11.jpg)", "url(Images/Header/HBG12.jpg)"];
 let randomBGNumber = Math.floor(Math.random() * headerBG.length);
 
 document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
-//-- End of Randomization
 
 //--Resets Scroll Position To Top of page on reload
 window.onbeforeunload = function () {
@@ -41,12 +40,9 @@ function getTemp(){
 })
 		.then(function(data) {
 		 	cardAPIListings = data;
-			console.log(cardAPIListings);
 			RandomCard();
 		});
 }
-
-
 
 //--- Grab a Random Card and Show it on the Page with its image
 function RandomCard() {
@@ -57,8 +53,7 @@ function RandomCard() {
     case "Spell Card":
     case "Trap Card":
       cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + '<br><br>' +  
-      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
-      cardAPIListings.data[RC].attribute + '<br><br>' + 'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
+      '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' +  '<br><br>' + 'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
       
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
     break;
@@ -108,7 +103,7 @@ function RandomCard() {
   }
 }
 
-//-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For A Name.
+//-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For Data.
 function cardSearch(input) {
   var result = [];
   for (var i=0; i < cardAPIListings.data.length ; i++ ) {
@@ -118,7 +113,6 @@ function cardSearch(input) {
       }
     }
   }
-  console.log(result);
   return result;
 }
 
@@ -143,10 +137,24 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
   if (result.length == 0) {
     alert("ERROR Please submit a Yu-Gi-Oh Card Name!" + result.length);
   } else {
-    alert('Name: ' + result[0].name + '\n\n' + 'Type: ' + result[0].type + '\n\n' + 'Description: ' + result[0].desc 
-            + '\n\n' + 'Length: ' + result.length);
+    alert('Name: ' + result[0].name + '\n\n' + 'Type: ' + result[0].type + '\n\n' + 'Description: ' + result[0].desc + '\n\n' + 'Length: '
+     + result.length);
   }
 });
 
+//--Silly Little Scroll to Top Function
+ var mybutton = document.getElementById("TopButton");
+ document.addEventListener("scroll", async(event) => {
+   console.log(scrollY)
+  if (scrollY > "300") {
+    mybutton.style.display = "block";
+  } else {
+     mybutton.style.display = "none";
+  }
+});
 
+function ScrollToTop() {
+  window.scrollTo(0, 0);
+}
+//Animate This is The Future to Fall down from the Top of the Page
 
