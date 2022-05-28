@@ -56,6 +56,7 @@ function RandomCard() {
       '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' +  '<br><br>' + 'Effect: ' + '<br>' + cardAPIListings.data[RC].desc;
       
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+      randomCardImage.alt = cardAPIListings.data[RC].name;
     break;
   
     case "Effect Monster":
@@ -67,6 +68,7 @@ function RandomCard() {
       cardAPIListings.data[RC].atk + '  / Def: ' + cardAPIListings.data[RC].def;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+      randomCardImage.alt = cardAPIListings.data[RC].name;
     break;
   
     case "XYZ Monster":
@@ -76,6 +78,7 @@ function RandomCard() {
       cardAPIListings.data[RC].atk + ' / Def: ' + cardAPIListings.data[RC].def;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+      randomCardImage.alt = cardAPIListings.data[RC].name;
     break;
     
     case "Pendulum Effect Monster":
@@ -85,6 +88,7 @@ function RandomCard() {
       cardAPIListings.data[RC].atk + ' / Def: ' + cardAPIListings.data[RC].def + ' / Scale: ' + cardAPIListings.data[RC].scale;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+      randomCardImage.alt = cardAPIListings.data[RC].name;
     break;
     
     case "Link Monster":
@@ -94,6 +98,7 @@ function RandomCard() {
       cardAPIListings.data[RC].atk + '' + 'Markers: ' + cardAPIListings.data[RC].linkmarkers;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
+      randomCardImage.alt = cardAPIListings.data[RC].name;
     break;
   
     case "Skill Card":

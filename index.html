@@ -12,9 +12,7 @@
 <body>
 <header>  
     <div class="Nav-Container box">
-        <div class="Hamburger-Nav show-on-tablet-size">
-            <a></a>
-        </div>
+        <div class="Hamburger-Nav show-on-tablet-size"><a></a></div>
     <div class="empty-column hide-from-tablet-size"></div>
     <a href="index.html">
         <img class="Logo hide-from-mobile-size" src="Images/Icons/Tmp_Logo.png" alt="">
@@ -49,17 +47,16 @@
     <form id="SearchBoxMainNav" style="display: flex;">
         <input class="nav-button" type="submit" name="search" value="" >
         <input class="SearchField" type="text" name="search"  value="" id="SearchTerm"  placeholder="I Draw...!" autocomplete="off" />
-    </form>
-    
+    </form>  
     <a href="https://twitter.com/NotTayyy" target="_blank">
         <img class="hide-from-mobile-size" style="width: 70px; margin-top: 3px; "  src="Images/Icons/Twitter.png" alt="">
     </a>
-    <div class="empty-column"></div>
+    <div class="empty-column hide-from-mobile-size"></div>
     </div>
 </header>
 
 <aside id="ToTheTop">
-    <button id="TopButton" style=" height:55px; width: 55px; display: none;" onclick="ScrollToTop()">
+    <button id="TopButton" style="display: none;" onclick="ScrollToTop()" name="To The Top">
 </aside>
 
 <div class="header-overlay" id="headeroverlay">
@@ -83,8 +80,8 @@
       <h2>Random Card Showcase:</h2>      
       <div class="cardshowcase">
         <div class="randomcard">
-            <img id="randomImage" src="">
-            <div id="randomTextBG" class="NoScrollBar">
+            <img id="randomImage" src="" alt="">
+            <div id="randomTextBG" class="hide-from-mobile-size">
                 <p id="randomcardshowcase"></p>
             </div>
         </div>
@@ -111,7 +108,7 @@
         </div>
         <div class="footer-middle">
             <div>
-             <ul>
+             <ul id="footerNavMobile">
                 <li class="padding">
                     <a class="footer-navigation" href="about-me.html">About Me</a>
                 </li>
@@ -135,7 +132,7 @@
                 </li>
              </ul>
             </div>
-        <div class="empty-column"></div>
+        <div class="empty-column hide-from-mobile-size"></div>
             <div>
              <ul>
                 <li class="padding">

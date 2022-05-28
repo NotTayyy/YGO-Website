@@ -61,12 +61,6 @@ a.highlight:hover {
     color: rgb(228, 228, 228);
     border-top: 2px solid #ececec;
     display: block;
-
-}
-
-.respimg {
-    max-width: 100%;
-    height: auto;
 }
 
 .page-background {
@@ -200,6 +194,7 @@ a.highlight:hover {
 .footer-top{
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .footer-bottom{
@@ -289,6 +284,8 @@ a.highlight:hover {
     border: none;
     background-color: #1414143a;
     border-radius: 30px;
+    height:55px;
+    width: 55px;
 }
 
 #TopButton:hover {
@@ -336,23 +333,61 @@ a.highlight:hover {
 .hide-from-desktop-size {
     display: block;
 }
-
+/* When the Screen is Mobile Size Do This */
 @media screen and (max-width: 767px) {
     .hide-from-mobile-size {
         display: none;
     }
-    #randomImage {
-        height: 200px;
-        width: 377px;
+    #body-wrap {
+        width: 100%; 
+        margin: 0 0;
     }
-}
+    .SearchField {
+        width: 100%;
+    }
+    #TopButton {
+        background-size: 20px;
+        height: 20px;
+        width: 20px;
+    }
+    #ToTheTop {
+        bottom: 13px;
+        left: 10px;
+        position: fixed;
+        z-index: 10;
+    }
+    #randomImage {
+        width: 100%;
+        height: auto;
+    }
+    .randomcard {
+        height: auto;
+    }
+    .footer-middle {
+        display: block;
+        height: auto;
+        margin: 5px;
+    }
+    #footerNavMobile {
+        display: grid;
+        justify-items: center;
+    }
+    .padding {
+        padding: 0 0;
+    }
+    .footer-bottom {
+        text-align: center;
+    }   
 
+}
+/* When the Screen is Bigger Than Mobile Size hide the Mobile size only stuff*/
 @media screen and (min-width: 768px) {
     .show-on-mobile-size {
         display: none;
     }
-}
 
+}
+/* When the Screen is Tablet size do this */
 @media screen and (max-width: 1024px) {
     .hide-from-tablet-size {
         display: none;
@@ -360,8 +395,9 @@ a.highlight:hover {
     .show-on-desktop-size {
         display: none;
     }
+    
 }
-
+/* When the Screen is Just Desktop Size Do This */
 @media screen and (min-width: 1025px) {
     .show-on-tablet-size {
         display: none;
