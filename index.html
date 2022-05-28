@@ -4,7 +4,7 @@
     <title> YGO! - Combo Searcher</title>
     <meta charset="UTF-8">
     <link type="text/css" href="Style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="Images/Tmp_Logo.png">
+    <link rel="icon" type="image/png" href="Images/Icons/Tmp_Logo.png">
     <meta name="description" content="An ambitious YGO Combo/Search/Summon/Discard Glossary System">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -12,11 +12,15 @@
 <body>
 <header>  
     <div class="Nav-Container box">
+        <div class="Hamburger-Nav show-on-tablet-size">
+            <a></a>
+        </div>
+    <div class="empty-column hide-from-tablet-size"></div>
     <a href="index.html">
-        <img class="Logo" src="Images/Tmp_Logo.png" alt="">
+        <img class="Logo hide-from-mobile-size" src="Images/Icons/Tmp_Logo.png" alt="">
     </a>
     <nav id="site-navigation" class="main-navigation">
-     <div class="column">
+     <div class="column hide-from-mobile-size">
         <ul>
             <li>
                 <a class="top-navigation-bar highlight" href="index.html">Home</a>
@@ -46,11 +50,17 @@
         <input class="nav-button" type="submit" name="search" value="" >
         <input class="SearchField" type="text" name="search"  value="" id="SearchTerm"  placeholder="I Draw...!" autocomplete="off" />
     </form>
+    
     <a href="https://twitter.com/NotTayyy" target="_blank">
-        <img style="width: 70px "  src="Images/Twitter.png" alt="">
+        <img class="hide-from-mobile-size" style="width: 70px; margin-top: 3px; "  src="Images/Icons/Twitter.png" alt="">
     </a>
+    <div class="empty-column"></div>
     </div>
 </header>
+
+<aside id="ToTheTop">
+    <button id="TopButton" style=" height:55px; width: 55px; display: none;" onclick="ScrollToTop()">
+</aside>
 
 <div class="header-overlay" id="headeroverlay">
     <div class="header-text">
@@ -59,15 +69,18 @@
     </div>
 </div>
 
-<div style="background-image: url(Images/Background-tile.jpg);">
+<div style="background-image: url(Images/Backgrounds/Background-tile.jpg);">
     <div id="body-wrap">
         <h1 style="font-size: 42px;">The Ultimate Yu-Gi-Oh! Combo Tool Website!</h1>
         <p style="font-size: 36px;">An ambitious project to create a website that allows you to create and find combos in a more intuitive manner!</p>
             <br>
         <p>This site aims to allow you to see every card that Searches, Sends, Summons, Discards, Mills, Spins, Bounces ETC Other Cards in your or your opponents deck!
-        I will be working on this website slowly over time the back end is going to be a pain but I will dabble in back end as much as I can to get this done.
+        I will be working on this website slowly o  ver time the back end is going to be a pain but I will dabble in back end as much as I can to get this done.
         This is very ambitious for me as im doing this mostly by myself and with little knowledge, so at the same time im studying im working on this website and hopefully
-        by the time I get decently through this I hope I can get an actual coding Job using this as a portfolio of sorts and a pet project!</p>      
+        by the time I get decently through this I hope I can get an actual coding Job using this as a portfolio of sorts and a pet project!</p>   
+        <br>
+        <hr>
+      <h2>Random Card Showcase:</h2>      
       <div class="cardshowcase">
         <div class="randomcard">
             <img id="randomImage" src="">
@@ -92,7 +105,7 @@
     <div class="footer-base">
         <div class="footer-top">
             <a href="index.html" style="height: 60px; padding-right: 20px; padding-left: 20px;">
-                <img style="width: 60px; height: 60px;" src="https://icon-library.com/images/card-game-icon/card-game-icon-28.jpg" alt="">
+                <img style="width: 60px; height: 60px;" src="Images/Icons/cardgame_icon.png" alt="">
             </a>
             <h1 style="margin: 0; font-size: 30px;">Extra Deck</h1>
         </div>
@@ -127,12 +140,12 @@
              <ul>
                 <li class="padding">
                     <a href="https://twitter.com/NotTayyy" target="_blank">
-                        <img style="width: 65px;"  src="Images/Twitter.png" alt="">
+                        <img style="width: 65px;"  src="Images/Icons/Twitter.png" alt="">
                     </a>
                 </li>
                 <li class="padding">
                     <a href="mailto:robertantoine99@gmail.com" target="_blank">
-                        <img style="width: 65px;" src="Images/Email.png" alt="E-Mail Button">
+                        <img style="width: 65px;" src="Images/Icons/Email.png" alt="E-Mail Button">
                     </a>
                 </li>
             </ul>
