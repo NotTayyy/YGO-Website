@@ -151,7 +151,7 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
  var mybutton = document.getElementById("TopButton");
  document.addEventListener("scroll", async(event) => {
    console.log(scrollY)
-  if (scrollY > "300") {
+  if (scrollY > "250") {
     mybutton.style.display = "block";
   } else {
      mybutton.style.display = "none";
