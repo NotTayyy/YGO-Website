@@ -40,6 +40,10 @@ a {
     cursor: pointer;
 }
 
+h1 {
+    padding: 0 5px;
+}
+
 a.highlight:hover {
     color: #59c1eb;
     background-color: #024058;
@@ -86,7 +90,7 @@ a.highlight:hover {
 .Hamburger-Nav {
     width: 65px;
     height: auto;
-    margin: 10px;
+    margin: 11px;
 }
 
 .Hamburger-Nav a {
@@ -199,7 +203,7 @@ a.highlight:hover {
 
 .footer-bottom{
     font-size: smaller;
-    color: #6e6e6e;
+    color: #8d8d8d;
     padding-top: 25px;
 }
 
@@ -212,7 +216,7 @@ a.highlight:hover {
 }
 
 .footer-navigation {
-    color: #bbb8b8;
+    color: #dfdfdf;
     font-size: 20px;
 }
 
@@ -346,9 +350,9 @@ a.highlight:hover {
         width: 100%;
     }
     #TopButton {
-        background-size: 20px;
-        height: 20px;
-        width: 20px;
+        background-size: 32px;
+        height: 32px;
+        width: 32px;
     }
     #ToTheTop {
         bottom: 13px;
@@ -407,13 +411,15 @@ a.highlight:hover {
     }
 }
 
+.twitter-timeline {
+    overflow-y: scroll;
+    margin: 0 auto;
+    top: 100px;
+}
 
-
-/* 
- < 1025 = Desktop Size
- 768 <> 1025 = Tablet Size
- > 767 = Mobile Size
-*/
-
-/* Testing Stuffles above*/
+.TwitterShowcase {
+    background-color: #024058;
+    width: 80%;
+    margin: 0 auto;
+}
 

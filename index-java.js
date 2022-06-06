@@ -138,12 +138,16 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
 SearchBoxMainNav.addEventListener('submit', async(event) => {
   event.preventDefault();
   var searchText = document.getElementById('SearchTerm').value;
-  var result = cardSearch(searchText); 
-  if (result.length == 0) {
-    alert("ERROR Please submit a Yu-Gi-Oh Card Name!" + result.length);
+  if (searchText != "") {
+    var result = cardSearch(searchText); 
+    if (result.length == 0) {
+      alert("Please submit a Yu-Gi-Oh Card Name!" + result.length);
+    } else {
+      alert('Name: ' + result[0].name + '\n\n' + 'Type: ' + result[0].type + '\n\n' + 'Description: ' + result[0].desc + '\n\n' + 'Length: '
+      + result.length);
+    }
   } else {
-    alert('Name: ' + result[0].name + '\n\n' + 'Type: ' + result[0].type + '\n\n' + 'Description: ' + result[0].desc + '\n\n' + 'Length: '
-     + result.length);
+    alert("Please submit a Yu-Gi-Oh Card Name!")
   }
 });
 
