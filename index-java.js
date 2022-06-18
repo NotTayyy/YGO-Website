@@ -135,6 +135,66 @@ function cardSearch(input) {
 //   } 
 // });
 
+function CardTypeImage(type) {
+  switch (type) {
+    case "Spell Card":
+      return "Images/Card-Types/Spell Card.jpg";
+      break;
+    case "Trap Card":
+      return "Images/Card-Types/Trap Card.jpg";
+      break;
+    case "Flip Effect Monster":a
+    case "Tuner Monster":
+    case "Effect Monster":
+      return "Images/Card-Types/Effect Monster.jpg";
+      break;
+    case "Fusion Monster":
+      return "Images/Card-Types/Fusion Monster.jpg";
+      break;
+    case "Normal Monster":
+      return "Images/Card-Types/Normal Monster.jpg";
+      break;
+    case "Synchro Tuner Monster":
+    case "Synchro Monster":
+      return "Images/Card-Types/Synchro Monster.jpg";
+      break;
+    case "XYZ Monster":
+      return "Images/Card-Types/XYZ Monster.jpg";
+      break;
+    case "Pendulum Effect Monster":
+      return "Images/Card-Types/Pendulum Effect Monster.jpg";
+      break;
+    case "Pendulum Normal Monster":
+      return "Images/Card-Types/Pendulum Normal Monster.jpg";
+      break;
+    case "Pendulum Effect Fusion Monster":
+      return "Images/Card-Types/Pendulum Effect Fusion Monster.jpg";
+      break;
+    case "Synchro Pendulum Effect Monster":
+        return "Images/Card-Types/Synchro Pendulum Effect Monster.jpg";
+        break;
+    case "XYZ Pendulum Effect Monster":
+        return "Images/Card-Types/XYZ Pendulum Effect Monster.jpg";
+        break;
+    case "Link Monster":
+      return "Images/Card-Types/Link Monster.jpg";
+      break;
+    case "Ritual Effect Monster":
+      return "Images/Card-Types/Ritual Effect Monster.jpg";
+      break;
+    case "Token":
+      return "Images/Card-Types/Token.jpg";
+      break;
+    case "Undefined":
+      return "Images/Card-Types/undefined.jpg";
+      break;
+    default:
+      return "Images/Card-Types/undefined.jpg";
+      break;
+  }
+
+}
+
 const cardDropdownTemplate = document.querySelector('[Card-Dropdown-Template]');
 const cardDropdownContainer = document.querySelector('[card-dropdown-container]');
 
@@ -143,15 +203,29 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
   cardDropdownContainer.innerHTML = "";
   if (input != "") {
     var result = cardSearch(input);
-    console.log(result);
+    if (result.length == 0) {
+      const card = cardDropdownTemplate.content.cloneNode(true).children[0];
+      const name = card.querySelector("[Ygo-Card-Name]");
+      const imge = card.querySelector("[card-image]");
+      name.textContent = "No Card Found";
+      imge.src = CardTypeImage("Undefined");
+      cardDropdownContainer.append(card);
+
+    } else {
+
     for (var i = result.length -1; i > -1; i--) {
       const card = cardDropdownTemplate.content.cloneNode(true).children[0];
       const name = card.querySelector("[Ygo-Card-Name]");
       const desc =  card.querySelector("[Ygo-Card-Desc]");
+      const link = card.querySelector("[card-Page-Link]");
+      const imge = card.querySelector("[card-image]");
       name.textContent = result[i].name;
       desc.textContent = result[i].desc;
+      link.href = "https://www.youtube.com/watch?v=epQCXVnP0VU";
+      imge.src =CardTypeImage(result[i].type);
       cardDropdownContainer.append(card);
     }
+  }
   }
 })
 

@@ -382,6 +382,10 @@ a.highlight:hover {
     .footer-bottom {
         text-align: center;
     }   
+    .dropdown-Content {
+        width: 300px;
+        height: 200px;
+    }
 
 }
 /* When the Screen is Bigger Than Mobile Size hide the Mobile size only stuff*/
@@ -432,10 +436,7 @@ a.highlight:hover {
     color: white;
     background-color: rgb(24, 24, 24);
     width: 400px;
-    overflow: auto;
-    max-height: 630 px;
-    
-    
+    overflow: auto; 
 }
 
 .card-dropdown {
@@ -445,7 +446,11 @@ a.highlight:hover {
     text-overflow: ellipsis;
     max-width: 400px;
     overflow: hidden;
+    display: flex;
+}
 
+.card-dropdown:hover {
+    background-color: #024058;
 }
 
 .hide {
@@ -457,10 +462,22 @@ a.highlight:hover {
 }
 
 .card-name {
-    font-size: 24px;
+    font-size: 22px;
     color: rgb(255, 255, 255);
+    width: 346px;
 }
 
 .card-description {
-    color: rgb(219, 219, 219);
+    color: rgb(185, 185, 185);
+    font-size: 18px;
+}
+
+.card-image-container {
+    display: flex;
+    align-items: center;
+}
+
+.card-image {
+    width: 40px;
+    height: 60px;
 }
