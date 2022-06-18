@@ -17,7 +17,7 @@
     <a href="index.html">
         <img class="Logo hide-from-mobile-size" src="Images/Icons/Tmp_Logo.png" alt="">
     </a>
-    <nav id="site-navigation" class="main-navigation">
+    <nav class="main-navigation">
      <div class="column hide-from-mobile-size">
         <ul>
             <li>
@@ -44,9 +44,19 @@
         </ul>
      </div>
     </nav>
-    <form id="SearchBoxMainNav" style="display: flex;">
-        <input class="nav-button" type="submit" name="search" value="" >
-        <input class="SearchField" type="text" name="search"  value="" id="SearchTerm"  placeholder="I Draw...!" autocomplete="off" />
+    <form id="SearchBoxMainNav">
+        <div style="display: flex">
+            <input class="nav-button" type="submit" name="search" value="" >
+            <input class="SearchField" type="text" name="search"  value="" id="SearchTerm"  placeholder="I Draw...!" autocomplete="off" />
+        </div>
+        <div class="dropdown-Content" card-dropdown-container ></div>
+        <template Card-Dropdown-Template>
+            <div class="card-dropdown" Dropdowns >
+                <div class="card-name" Ygo-Card-Name></div>
+                <div class="card-description" Ygo-Card-Desc></div> 
+            </div>
+        </template>
+
     </form>  
     <a href="https://twitter.com/NotTayyy" target="_blank">
         <img class="hide-from-mobile-size" style="width: 70px; margin-top: 3px; "  src="Images/Icons/Twitter.png" alt="">

@@ -85,6 +85,7 @@ a.highlight:hover {
     text-align: left;
     position: relative;
     background-color: #1b1b1b;
+    overflow: hidden;
 }
 
 .Hamburger-Nav {
@@ -106,7 +107,6 @@ a.highlight:hover {
 .Nav-Container {
     display: flex;
     height: 75px;
-    overflow: hidden;
     flex-grow: 1;
 }
 
@@ -423,3 +423,44 @@ a.highlight:hover {
     margin: 0 auto;
 }
 
+.dropdown-Content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    z-index: 100;
+    color: white;
+    background-color: rgb(24, 24, 24);
+    width: 400px;
+    overflow: auto;
+    max-height: 630 px;
+    
+    
+}
+
+.card-dropdown {
+    padding: 5px;
+    border: 2px solid rgb(19, 19, 19);
+    max-height: 100px;
+    text-overflow: ellipsis;
+    max-width: 400px;
+    overflow: hidden;
+
+}
+
+.hide {
+    display: none;
+}
+
+.SearchField {
+    width: 400px;
+}
+
+.card-name {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.card-description {
+    color: rgb(219, 219, 219);
+}

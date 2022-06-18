@@ -113,7 +113,7 @@ function cardSearch(input) {
   var result = [];
   for (var i=0; i < cardAPIListings.data.length ; i++ ) {
     if (cardAPIListings.data[i]["name"].toUpperCase().includes(input.toUpperCase())) {
-      if (result.length < 5) {
+      if (result.length < 4) {
         result.push(cardAPIListings.data[i]);
       }
     }
@@ -121,18 +121,39 @@ function cardSearch(input) {
   return result;
 }
 
-//-- Updates the Text Whenever an Input is made to the Text Field
+//-- Updates the Text Whenever an Input is made to the Text Field and populates a Drop Down
+
+// SearchBoxMainNav.addEventListener('input', async(event) =>{
+//   var input = document.getElementById('SearchTerm').value;
+//   var inputlog = document.getElementById("placeholder");
+//   inputlog.innerHTML = "";
+//   if (input != "") {
+//     var result = cardSearch(input);
+//     for (var i = 0; i < 4; i++) {
+//       inputlog.innerHTML += '['+result[i].name +'] ' ;
+//     }
+//   } 
+// });
+
+const cardDropdownTemplate = document.querySelector('[Card-Dropdown-Template]');
+const cardDropdownContainer = document.querySelector('[card-dropdown-container]');
+
 SearchBoxMainNav.addEventListener('input', async(event) =>{
   var input = document.getElementById('SearchTerm').value;
-  var inputlog = document.getElementById("placeholder");
-  inputlog.innerHTML = "";
+  cardDropdownContainer.innerHTML = "";
   if (input != "") {
     var result = cardSearch(input);
-    for (var i = 0; i < 4; i++) {
-      inputlog.innerHTML += '['+result[i].name +'] ' ;
+    console.log(result);
+    for (var i = result.length -1; i > -1; i--) {
+      const card = cardDropdownTemplate.content.cloneNode(true).children[0];
+      const name = card.querySelector("[Ygo-Card-Name]");
+      const desc =  card.querySelector("[Ygo-Card-Desc]");
+      name.textContent = result[i].name;
+      desc.textContent = result[i].desc;
+      cardDropdownContainer.append(card);
     }
-  } 
-});
+  }
+})
 
 //Alerts the page whenever you Submit the Form search Field
 SearchBoxMainNav.addEventListener('submit', async(event) => {
@@ -167,3 +188,22 @@ function ScrollToTop() {
 }
 //Animate This is The Future to Fall down from the Top of the Page
 
+//Populate and Create Dropdown
+
+
+
+
+
+
+
+// SearchBoxMainNav.addEventListener('input', async(event) =>{
+//   var input = document.getElementById('SearchTerm').value;
+//   var inputlog = document.getElementById("placeholder");
+//   inputlog.innerHTML = "";
+//   if (input != "") {
+//     var result = cardSearch(input);
+//     for (var i = 0; i < 4; i++) {
+//       inputlog.innerHTML += '['+result[i].name +'] ' ;
+//     }
+//   } 
+// });
