@@ -2,9 +2,16 @@
 const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", "url(Images/Header/HBG3.jpg)", "url(Images/Header/HBG4.jpg)", 
   "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", 
   "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)", "url(Images/Header/HBG11.jpg)", "url(Images/Header/HBG12.jpg)"];
-let randomBGNumber = Math.floor(Math.random() * headerBG.length);
 
-document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
+
+function rndm() {
+  let randomBGNumber = Math.floor(Math.random() * headerBG.length);
+  document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
+}
+setTimeout(rndm, 1);
+setInterval(rndm, 10000);
+
+
 
 //--Resets Scroll Position To Top of page on reload
 window.onbeforeunload = function () {
@@ -185,6 +192,9 @@ function CardTypeImage(type) {
     case "Token":
       return "Images/Card-Types/Token.jpg";
       break;
+    case "Skill Card":
+      return "Images/Card-Types/Skill Card.jpg";
+      break;
     case "Undefined":
       return "Images/Card-Types/undefined.jpg";
       break;
@@ -227,7 +237,23 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
     }
   }
   }
+});
+
+//Hides everything If You clock out of It
+document.addEventListener("click", (evt) => {
+  const dropdownEl = cardDropdownContainer;
+  const searchBox = document.querySelector("[search-main-nav]");
+  let targetEl = evt.target;
+  do {
+    if (targetEl == dropdownEl || targetEl == searchBox) {
+      return;
+    }
+    targetEl = targetEl.parentNode;
+  } while (targetEl);
+  cardDropdownContainer.innerHTML = "";
 })
+
+
 
 //Alerts the page whenever you Submit the Form search Field
 SearchBoxMainNav.addEventListener('submit', async(event) => {
@@ -262,22 +288,3 @@ function ScrollToTop() {
 }
 //Animate This is The Future to Fall down from the Top of the Page
 
-//Populate and Create Dropdown
-
-
-
-
-
-
-
-// SearchBoxMainNav.addEventListener('input', async(event) =>{
-//   var input = document.getElementById('SearchTerm').value;
-//   var inputlog = document.getElementById("placeholder");
-//   inputlog.innerHTML = "";
-//   if (input != "") {
-//     var result = cardSearch(input);
-//     for (var i = 0; i < 4; i++) {
-//       inputlog.innerHTML += '['+result[i].name +'] ' ;
-//     }
-//   } 
-// });
