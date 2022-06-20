@@ -10,13 +10,16 @@
 
 </head>
 <body>
+
 <header>  
     <div class="Nav-Container box">
         <div class="Hamburger-Nav show-on-tablet-size"><a></a></div>
     <div class="empty-column hide-from-tablet-size"></div>
+
     <a href="index.html">
         <img class="Logo hide-from-mobile-size" src="Images/Icons/Tmp_Logo.png" alt="">
     </a>
+
     <nav class="main-navigation">
      <div class="column hide-from-mobile-size">
         <ul>
@@ -45,11 +48,14 @@
      </div>
     </nav>
     <form id="SearchBoxMainNav" search-main-nav >
+
         <div style="display: flex">
             <input class="nav-button" type="submit" name="search" value="" >
             <input class="SearchField" type="text" name="search"  value="" id="SearchTerm"  placeholder="I Draw...!" autocomplete="off" />
         </div>
+
         <div class="dropdown-Content" card-dropdown-container ></div>
+
         <template Card-Dropdown-Template>
             <div class="card-dropdown" Dropdowns >
                 <a href="" target="_blank" card-Page-Link >
@@ -62,10 +68,19 @@
             </div>
         </template>
 
-    </form>  
+        <template More-Search-Template>
+            <div class="SearchMore">
+                <a href="search.html" target="_blank" extra-Search-Page >
+                    <div class=""search-More>More...</div>
+                </a>
+            </div>
+        </template>
+    </form> 
+
     <a href="https://twitter.com/NotTayyy" target="_blank">
         <img class="hide-from-mobile-size" style="width: 70px; margin-top: 3px; "  src="Images/Icons/Twitter.png" alt="">
     </a>
+
     <div class="empty-column hide-from-mobile-size"></div>
     </div>
 </header>

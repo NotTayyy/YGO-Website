@@ -481,3 +481,18 @@ a.highlight:hover {
     width: 40px;
     height: 60px;
 }
+
+.SearchMore {
+    text-align: center;
+    margin: 0px auto;
+    width: 100%;
+    padding: 8px 0px;
+}
+
+.SearchMore a {
+    color: white;
+}
+
+.SearchMore:hover {
+    background-color: #024058;
+}

@@ -120,7 +120,7 @@ function cardSearch(input) {
   var result = [];
   for (var i=0; i < cardAPIListings.data.length ; i++ ) {
     if (cardAPIListings.data[i]["name"].toUpperCase().includes(input.toUpperCase())) {
-      if (result.length < 4) {
+      if (result.length < 5) {
         result.push(cardAPIListings.data[i]);
       }
     }
@@ -150,7 +150,7 @@ function CardTypeImage(type) {
     case "Trap Card":
       return "Images/Card-Types/Trap Card.jpg";
       break;
-    case "Flip Effect Monster":a
+    case "Flip Effect Monster":
     case "Tuner Monster":
     case "Effect Monster":
       return "Images/Card-Types/Effect Monster.jpg";
@@ -207,8 +207,10 @@ function CardTypeImage(type) {
 
 const cardDropdownTemplate = document.querySelector('[Card-Dropdown-Template]');
 const cardDropdownContainer = document.querySelector('[card-dropdown-container]');
+const cardDropdownMoreTem = document.querySelector('[More-Search-Template]')
 
 SearchBoxMainNav.addEventListener('input', async(event) =>{
+  const more = cardDropdownMoreTem.content.cloneNode(true).children[0];
   var input = document.getElementById('SearchTerm').value;
   cardDropdownContainer.innerHTML = "";
   if (input != "") {
@@ -220,7 +222,6 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
       name.textContent = "No Card Found";
       imge.src = CardTypeImage("Undefined");
       cardDropdownContainer.append(card);
-
     } else {
 
     for (var i = result.length -1; i > -1; i--) {
@@ -231,15 +232,17 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
       const imge = card.querySelector("[card-image]");
       name.textContent = result[i].name;
       desc.textContent = result[i].desc;
-      link.href = "https://www.youtube.com/watch?v=epQCXVnP0VU";
+      link.href = "search.html";
       imge.src =CardTypeImage(result[i].type);
       cardDropdownContainer.append(card);
     }
+    cardDropdownContainer.append(more);
+    console.log(result);
   }
   }
 });
 
-//Hides everything If You clock out of It
+//Hides everything in search box If You click out of It
 document.addEventListener("click", (evt) => {
   const dropdownEl = cardDropdownContainer;
   const searchBox = document.querySelector("[search-main-nav]");
