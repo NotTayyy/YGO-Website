@@ -174,7 +174,6 @@ a.highlight:hover {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-top: 75px;
 }
 
 
@@ -382,10 +381,7 @@ a.highlight:hover {
     .footer-bottom {
         text-align: center;
     }   
-    .dropdown-Content {
-        width: 300px;
-        height: 200px;
-    }
+
 
 }
 /* When the Screen is Bigger Than Mobile Size hide the Mobile size only stuff*/
@@ -442,7 +438,7 @@ a.highlight:hover {
 .card-dropdown {
     padding: 5px;
     border: 2px solid rgb(19, 19, 19);
-    max-height: 100px;
+    max-height: 108px;
     text-overflow: ellipsis;
     max-width: 400px;
     overflow: hidden;
@@ -465,16 +461,20 @@ a.highlight:hover {
     font-size: 22px;
     color: rgb(255, 255, 255);
     width: 346px;
+    float: left;
 }
 
 .card-description {
     color: rgb(185, 185, 185);
     font-size: 18px;
+    float: left;
+    width: 343px;
 }
 
 .card-image-container {
     display: flex;
     align-items: center;
+    float: right;
 }
 
 .card-image {
@@ -495,4 +495,15 @@ a.highlight:hover {
 
 .SearchMore:hover {
     background-color: #024058;
+}
+
+.NoButton {
+    background:none;
+    border:none;
+    text-align: left;
+    padding: 0px;
+}
+
+.headerPadding {
+    margin-top: 75px;
 }

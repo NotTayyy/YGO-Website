@@ -47,7 +47,7 @@
         </ul>
      </div>
     </nav>
-    <form id="SearchBoxMainNav" search-main-nav >
+    <form id="SearchBoxMainNav" name="SearchForm" target="_blank" action="/search.html" method="GET" search-main-nav >
 
         <div style="display: flex">
             <input class="nav-button" type="submit" name="search" value="" >
@@ -57,15 +57,16 @@
         <div class="dropdown-Content" card-dropdown-container ></div>
 
         <template Card-Dropdown-Template>
-            <div class="card-dropdown" Dropdowns >
-                <a href="" target="_blank" card-Page-Link >
+            <div id="CardDropdownButton" class="card-dropdown" Dropdowns >
+                <button class="NoButton" name="SearchForm" onclick="SearchButton()">
                     <div class="card-name" Ygo-Card-Name></div>
                     <div class="card-description hide-from-mobile-size" Ygo-Card-Desc></div>
-                </a> 
-                <div class="card-image-container"card-image-container>
-                    <img class="card-image" src="" card-Image>
-                </div>
-            </div>
+                    <div class="card-image-container"card-image-container>
+                        <img class="card-image" src="" card-Image>
+                    </div>
+                </button>
+
+            </div> 
         </template>
 
         <template More-Search-Template>
@@ -89,7 +90,7 @@
     <button id="TopButton" style="display: none;" onclick="ScrollToTop()" name="To The Top">
 </aside>
 
-<div class="header-overlay" id="headeroverlay">
+<div class="header-overlay headerPadding" id="headeroverlay">
     <div class="header-text">
         <h1>Yu-Gi-Oh! Combo Database!</h1>
         <span id="placeholder"></span>

@@ -269,11 +269,3 @@ function ScrollToTop() {
   window.scrollTo(0, 0);
 }
 //Animate This is The Future to Fall down from the Top of the Page
-
-function SearchButton() {  
-
-  console.log(Sname.innerHTML);
-}
-
-
-
