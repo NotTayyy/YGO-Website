@@ -94,6 +94,8 @@ function RandomCard() {
   }
 }
 
+let CSResult = [];
+
 //-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For Data.
 function cardSearch(input) {
   var result = [];
@@ -103,10 +105,12 @@ function cardSearch(input) {
       if (result.length < 5) {
         result.push(cardAPIListings.data[i]);
       } else {
+        CSResult = result;
         return result;
       }
     }
   }
+  CSResult = result;
   return result;
 }
 
@@ -208,7 +212,7 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
       imge.src = CardTypeImage("Undefined");
       cardDropdownContainer.append(card);
     } else {
-    for (var i = result.length -1; i > -1; i--) {
+    for (var i = 0; i < result.length; i++) {
       const card = cardDropdownTemplate.content.cloneNode(true).children[0];
       const name = card.querySelector("[Ygo-Card-Name]");
       const desc =  card.querySelector("[Ygo-Card-Desc]");
@@ -247,12 +251,19 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
     if (result.length == 0) {
       alert("Please submit a Yu-Gi-Oh Card Name!" + result.length);
     } else {
+      document.getElementById('SearchTerm').value = CSResult[0].name;
       document.SearchForm.submit();
     }
   } else {
     alert("Please submit a Yu-Gi-Oh Card Name!")
   }
 });
+
+function SearchButton() {
+  event.preventDefault();
+  document.getElementById('SearchTerm').value = event.target.parentElement.firstElementChild.innerHTML;
+  document.SearchForm.submit();
+}
 
 //--Silly Little Scroll to Top Function
  var mybutton = document.getElementById("TopButton");
@@ -269,3 +280,6 @@ function ScrollToTop() {
   window.scrollTo(0, 0);
 }
 //Animate This is The Future to Fall down from the Top of the Page
+
+//When The Buttons clicked It Chenges the Search Box Value to The Name of the Card.
+
