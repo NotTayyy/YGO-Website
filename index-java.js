@@ -8,7 +8,7 @@ function rndm() {
   document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
 }
 setTimeout(rndm, 1);
-setInterval(rndm, 10000);
+setInterval(rndm, 15000);
 
 //--Resets Scroll Position To Top of page on reload
 window.onbeforeunload = function () {
@@ -95,7 +95,6 @@ function RandomCard() {
 }
 
 let CSResult = [];
-
 //-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For Data.
 function cardSearch(input) {
   var result = [];
@@ -113,20 +112,6 @@ function cardSearch(input) {
   CSResult = result;
   return result;
 }
-
-//-- Updates the Text Whenever an Input is made to the Text Field and populates a Drop Down
-
-// SearchBoxMainNav.addEventListener('input', async(event) =>{
-//   var input = document.getElementById('SearchTerm').value;
-//   var inputlog = document.getElementById("placeholder");
-//   inputlog.innerHTML = "";
-//   if (input != "") {
-//     var result = cardSearch(input);
-//     for (var i = 0; i < 4; i++) {
-//       inputlog.innerHTML += '['+result[i].name +'] ' ;
-//     }
-//   } 
-// });
 
 function CardTypeImage(type) {
   switch (type) {
@@ -193,17 +178,17 @@ function CardTypeImage(type) {
   }
 
 }
-
+//-- Updates the Text Whenever an Input is made to the Text Field and populates a Drop Down// SearchBoxMainNav.addEventListener('input', async(event) =>{
 const cardDropdownTemplate = document.querySelector('[Card-Dropdown-Template]');
 const cardDropdownContainer = document.querySelector('[card-dropdown-container]');
-const cardDropdownMoreTem = document.querySelector('[More-Search-Template]')
+const cardDropdownMoreTem = document.querySelector('[More-Search-Template]');
 
 SearchBoxMainNav.addEventListener('input', async(event) =>{
   const more = cardDropdownMoreTem.content.cloneNode(true).children[0];
   var input = document.getElementById('SearchTerm').value;
   cardDropdownContainer.innerHTML = "";
   if (input != "") {
-    var result = cardSearch(input);
+    var result = cardSearch(input); 
     if (result.length == 0) {
       const card = cardDropdownTemplate.content.cloneNode(true).children[0];
       const name = card.querySelector("[Ygo-Card-Name]");
@@ -251,7 +236,6 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
     if (result.length == 0) {
       alert("Please submit a Yu-Gi-Oh Card Name!" + result.length);
     } else {
-      document.getElementById('SearchTerm').value = CSResult[0].name;
       document.SearchForm.submit();
     }
   } else {
@@ -259,11 +243,11 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
   }
 });
 
-function SearchButton() {
-  event.preventDefault();
-  document.getElementById('SearchTerm').value = event.target.parentElement.firstElementChild.innerHTML;
-  document.SearchForm.submit();
-}
+ function SearchButton() {
+   event.preventDefault();
+   document.getElementById('SearchTerm').value = event.target.parentElement.firstElementChild.innerHTML;
+   document.SearchForm.submit();
+ }
 
 //--Silly Little Scroll to Top Function
  var mybutton = document.getElementById("TopButton");
@@ -281,5 +265,5 @@ function ScrollToTop() {
 }
 //Animate This is The Future to Fall down from the Top of the Page
 
-//When The Buttons clicked It Chenges the Search Box Value to The Name of the Card.
+
 
