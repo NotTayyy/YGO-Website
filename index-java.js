@@ -121,6 +121,8 @@ function CardTypeImage(type) {
     case "Trap Card":
       return "Images/Card-Types/Trap Card.jpg";
       break;
+    case "Spirit Monster":
+    case "Union Effect Monster":
     case "Flip Effect Monster":
     case "Tuner Monster":
     case "Effect Monster":
@@ -227,6 +229,7 @@ document.addEventListener("click", (evt) => {
   cardDropdownContainer.innerHTML = "";
 })
 
+let searchFinal = "";
 //Alerts the page whenever you Submit the Form search Field
 SearchBoxMainNav.addEventListener('submit', async(event) => {
   event.preventDefault();
@@ -236,6 +239,8 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
     if (result.length == 0) {
       alert("Please submit a Yu-Gi-Oh Card Name!" + result.length);
     } else {
+      searchFinal = result[0].data.name;
+      console.log(searchFinal);
       document.SearchForm.submit();
     }
   } else {
@@ -247,7 +252,7 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
    event.preventDefault();
    document.getElementById('SearchTerm').value = event.target.parentElement.firstElementChild.innerHTML;
    document.SearchForm.submit();
- }
+}
 
 //--Silly Little Scroll to Top Function
  var mybutton = document.getElementById("TopButton");
