@@ -20,13 +20,16 @@ let cardAPIListings = null;
 getAPI();
 
 function getAPI(){
-	fetch('https://nottayyy.github.io/YGO-JSON-GITHUB-REPO/cardinfo.json')
+	fetch('https://ygo-site-backend.herokuapp.com/card')
 		.then(function(response) {
+      console.log(response)
 			return response.json();
+
 })
 		.then(function(data) {
 		 	cardAPIListings = data;
-			RandomCard();
+			console.log(data)
+      RandomCard();
 		});
 }
 
