@@ -3,6 +3,24 @@ const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", 
   "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", 
   "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)", "url(Images/Header/HBG11.jpg)", "url(Images/Header/HBG12.jpg)"];
 
+function getAPI(){
+  fetch('https://ygo-site-backend.herokuapp.com/cardinfo.json', {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    },})
+    .then(function(response) {
+      console.log(response)
+      return response.json();
+  
+})
+    .then(function(data) {
+      cardAPIListings = data;
+      console.log(data)
+      RandomCard();
+    });
+}
+    
 function rndm() {
   let randomBGNumber = Math.floor(Math.random() * headerBG.length);
   document.getElementById("headeroverlay").style.backgroundImage = headerBG[randomBGNumber];
@@ -19,19 +37,6 @@ window.onbeforeunload = function () {
 let cardAPIListings = null;
 getAPI();
 
-function getAPI(){
-	fetch('https://ygo-site-backend.herokuapp.com/card')
-		.then(function(response) {
-      console.log(response)
-			return response.json();
-
-})
-		.then(function(data) {
-		 	cardAPIListings = data;
-			console.log(data)
-      RandomCard();
-		});
-}
 
 //--- Grab a Random Card and Show it on the Page with its image
 function RandomCard() {
