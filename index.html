@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="Images/Icons/Tmp_Logo.png">
     <meta name="description" content="An ambitious YGO Combo/Search/Summon/Discard Glossary System">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="index.js" defer></script>
 </head>
 <body>
 
@@ -42,7 +42,7 @@
                 <a class="top-navigation-bar highlight" href="card_lookup.html">Card lookup</a>
             </li>
             <li>
-                <a class="top-navigation-bar highlight" href="more.html">More...</a>
+                <a class="top-navigation-bar highlight" href="https://ygo-site-backend.herokuapp.com/">More...</a>
             </li>
         </ul>
      </div>
@@ -61,9 +61,7 @@
                 <button class="NoButton" name="SearchForm" onclick="SearchButton()">
                     <div class="card-name" Ygo-Card-Name></div>
                     <div class="card-description hide-from-mobile-size" Ygo-Card-Desc></div>
-                    <div class="card-image-container"card-image-container>
-                        <img class="card-image" src="" card-Image>
-                    </div>
+                    <img class="card-image" src="" card-Image>
                 </button>
 
             </div> 
@@ -191,8 +189,6 @@
         </div>
     </div>
 </footer>
-
 <!-- Still need to make a Proper Api, But this will Work from Now-->
-<script src="index.js"></script>
 </body>
 </html>
