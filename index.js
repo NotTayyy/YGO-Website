@@ -4,20 +4,17 @@ const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", 
   "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)", "url(Images/Header/HBG11.jpg)", "url(Images/Header/HBG12.jpg)"];
 
 function getAPI() {
-  fetch('https://ygo-site-backend.herokuapp.com/cardinfo.json', {
+  fetch('https://ygo-site-backend.herokuapp.com/card', {
     method: 'GET',
     headers: {
       accept: 'application/json',
     },
   }) 
     .then(function(response) {
-      console.log(response)
       return response.json();
-  
 })
     .then(function(data) {
       cardAPIListings = data;
-      console.log(data)
       RandomCard();
     });
 }
@@ -35,11 +32,12 @@ window.onbeforeunload = function () {
 }
 
 //---- Fetches the Api for Global Use
-let cardAPIListings = null;
-getAPI();
+let cardAPIListings = getAPI();
+;
 
 
-//--- Grab a Random Card and Show it on the Page with its image
+
+//--- Grab a Random Card and Show it on the Page with its im P@!age
 function RandomCard() {
   const RC = Math.floor(Math.random() * cardAPIListings.data.length);
   var cardShowcase = document.getElementById("randomcardshowcase");
@@ -258,9 +256,13 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
 });
 
  function SearchButton() {
-   event.preventDefault();
-   document.getElementById('SearchTerm').value = event.target.parentElement.firstElementChild.innerHTML;
+  this.event.preventDefault();
+  if (this.event.target.className == "NoButton" || this.event.target.parentElement.firstElementChild.innerHTML == "No Card Found") {
+
+  } else {
+   document.getElementById('SearchTerm').value = this.event.target.parentElement.firstElementChild.innerHTML;
    document.SearchForm.submit();
+  }
 }
 
 //--Silly Little Scroll to Top Function
