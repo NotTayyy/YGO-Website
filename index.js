@@ -101,22 +101,18 @@ function RandomCard() {
   }
 }
 
-let CSResult = [];
-//-----Main Search Loop Uses a Function to Take the Param of the Search box in order to search the Api For Data.
-function cardSearch(input) {
-  var result = [];
+function cardSearch(input){
+var result = [];
 
   for (var i=0; i < cardAPIListings.data.length ; i++ ) {
     if (cardAPIListings.data[i]["name"].toUpperCase().includes(input.toUpperCase())) {
       if (result.length < 5) {
         result.push(cardAPIListings.data[i]);
       } else {
-        CSResult = result;
         return result;
       }
     }
   }
-  CSResult = result;
   return result;
 }
 
@@ -213,7 +209,7 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
       const imge = card.querySelector("[card-image]");
       name.textContent = result[i].name;
       desc.textContent = result[i].desc;
-      imge.src =CardTypeImage(result[i].type);
+      imge.src = CardTypeImage(result[i].type);
       cardDropdownContainer.append(card);
     }
 
