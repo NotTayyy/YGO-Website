@@ -231,14 +231,14 @@ a.highlight:hover {
 .cardshowcase {
     margin: 50px 25px;
     display: flex;
-    height: 1115px;
+    height: auto;
     width: auto;
     padding: 0 5px;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.randomcard {
+.cardsc {
     height: 550px;
     width: auto;
     display: flex;
@@ -248,6 +248,7 @@ a.highlight:hover {
     background-color: rgba(0, 0, 0, 0.253);
     border: 10px ridge grey;
 }
+
 #randomTextBG {
     background-color: rgba(19, 19, 19, 0.5);
     width: 100%;
@@ -268,10 +269,9 @@ a.highlight:hover {
     width: 377px;
 }
 
-.popularcard {
-    background-color: rgb(241, 200, 200);
+#popimg {
     height: 550px;
-    width: auto;
+    width: 377px;
 }
 
 #ToTheTop {
@@ -360,6 +360,10 @@ a.highlight:hover {
         z-index: 10;
     }
     #randomImage {
+        width: 100%;
+        height: auto;
+    }
+    #popimg {
         width: 100%;
         height: auto;
     }

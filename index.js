@@ -18,6 +18,22 @@ function getAPI() {
       RandomCard();
     });
 }
+
+function getStaples() {
+  fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?staple=yes', {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    },
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    staples = data;
+    stapleOfDay();
+  })
+}
     
 function rndm() {
   let randomBGNumber = Math.floor(Math.random() * headerBG.length);
@@ -33,9 +49,71 @@ window.onbeforeunload = function () {
 
 //---- Fetches the Api for Global Use
 let cardAPIListings = getAPI();
-;
+let staples = getStaples();
 
-
+function stapleOfDay() {
+  const RC =Math.floor(Math.random() * staples.data.length);
+  var cardShowcase = document.getElementById("popcardShowcase");
+  var randomCardImage = document.getElementById('popimg');
+  switch (staples.data[RC].type) {
+      case "Spell Card":
+      case "Trap Card":
+        cardShowcase.innerHTML = '\"' +staples.data[RC].name + '\"' + '<br><br>' +  
+        '[' + staples.data[RC].race + ' / ' + staples.data[RC].type + ']' +  '<br><br>' + 'Effect: ' + '<br>' + staples.data[RC].desc;
+        
+        randomCardImage.src = staples.data[RC].card_images[0].image_url;
+        randomCardImage.alt = staples.data[RC].name;
+      break;
+    
+      case "Effect Monster":
+      case "Fusion Monster":
+      case "Normal Monster":
+        cardShowcase.innerHTML = '\"' +staples.data[RC].name + '\"' + ' Level: ' + staples.data[RC].level + '<br><br>' +  
+        '[' + staples.data[RC].race + ' / ' + staples.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+        staples.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + staples.data[RC].desc + '<br><br>' + ' Atk: ' +
+        staples.data[RC].atk + '  / Def: ' + staples.data[RC].def;
+    
+        randomCardImage.src = staples.data[RC].card_images[0].image_url;
+        randomCardImage.alt = staples.data[RC].name;
+      break;
+    
+      case "XYZ Monster":
+        cardShowcase.innerHTML = '\"' +staples.data[RC].name + '\"' + ' Rank: ' + staples.data[RC].level + '<br><br>' +  
+        '[' + staples.data[RC].race + ' / ' + staples.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+        staples.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + staples.data[RC].desc + '<br><br>' + ' Atk: ' +
+        staples.data[RC].atk + ' / Def: ' + staples.data[RC].def;
+    
+        randomCardImage.src = staples.data[RC].card_images[0].image_url;
+        randomCardImage.alt = staples.data[RC].name;
+      break;
+      
+      case "Pendulum Effect Monster":
+        cardShowcase.innerHTML = '\"' +staples.data[RC].name + '\"' + ' Level: ' + staples.data[RC].level + '<br><br>' +  
+        '[' + staples.data[RC].race + ' / ' + staples.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+        staples.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + staples.data[RC].desc.replace(/\n/g, "<br />") + '<br><br>' + ' Atk: ' +
+        staples.data[RC].atk + ' / Def: ' + staples.data[RC].def + ' / Scale: ' + staples.data[RC].scale;
+    
+        randomCardImage.src = staples.data[RC].card_images[0].image_url;
+        randomCardImage.alt = staples.data[RC].name;
+      break;
+      
+      case "Link Monster":
+        cardShowcase.innerHTML = '\"' +staples.data[RC].name + '\"' + '/ Link-Rating: ' + staples.data[RC].linkval + '<br><br>' +  
+        '[' + staples.data[RC].race + ' / ' + staples.data[RC].type + ']' + '<br>' + 'Attri: ' + 
+        staples.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + staples.data[RC].desc + '<br><br>' + ' Atk: ' +
+        staples.data[RC].atk + '<br><br>' + 'Markers: ' + staples.data[RC].linkmarkers;
+    
+        randomCardImage.src = staples.data[RC].card_images[0].image_url;
+        randomCardImage.alt = staples.data[RC].name;
+      break;
+    
+      case "Skill Card":
+      default:
+        RandomCard()
+      break;
+    
+  }
+}
 
 //--- Grab a Random Card and Show it on the Page with its im P@!age
 function RandomCard() {
@@ -88,7 +166,7 @@ function RandomCard() {
       cardShowcase.innerHTML = '\"' +cardAPIListings.data[RC].name + '\"' + '/ Link-Rating: ' + cardAPIListings.data[RC].linkval + '<br><br>' +  
       '[' + cardAPIListings.data[RC].race + ' / ' + cardAPIListings.data[RC].type + ']' + '<br>' + 'Attri: ' + 
       cardAPIListings.data[RC].attribute + '<br><br>' + 'Desc: ' + '<br>' + cardAPIListings.data[RC].desc + '<br><br>' + ' Atk: ' +
-      cardAPIListings.data[RC].atk + '' + 'Markers: ' + cardAPIListings.data[RC].linkmarkers;
+      cardAPIListings.data[RC].atk + '<br><br>' + 'Markers: ' + cardAPIListings.data[RC].linkmarkers;
   
       randomCardImage.src = cardAPIListings.data[RC].card_images[0].image_url;
       randomCardImage.alt = cardAPIListings.data[RC].name;
