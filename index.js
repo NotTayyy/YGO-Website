@@ -109,7 +109,7 @@ function stapleOfDay() {
     
       case "Skill Card":
       default:
-        RandomCard()
+        stapleOfDay()
       break;
     
   }
@@ -180,7 +180,7 @@ function RandomCard() {
 }
 
 function cardSearch(input){
-var result = [];
+  var result = [];
 
   for (var i=0; i < cardAPIListings.data.length ; i++ ) {
     if (cardAPIListings.data[i]["name"].toUpperCase().includes(input.toUpperCase())) {
@@ -261,6 +261,7 @@ function CardTypeImage(type) {
   }
 
 }
+
 //-- Updates the Text Whenever an Input is made to the Text Field and populates a Drop Down// SearchBoxMainNav.addEventListener('input', async(event) =>{
 const cardDropdownTemplate = document.querySelector('[Card-Dropdown-Template]');
 const cardDropdownContainer = document.querySelector('[card-dropdown-container]');
@@ -292,7 +293,7 @@ SearchBoxMainNav.addEventListener('input', async(event) =>{
     }
 
     cardDropdownContainer.append(more);
-  }
+    }
   }
 });
 
@@ -329,31 +330,27 @@ SearchBoxMainNav.addEventListener('submit', async(event) => {
   }
 });
 
- function SearchButton() {
+function SearchButton() {
   this.event.preventDefault();
   if (this.event.target.className == "NoButton" || this.event.target.parentElement.firstElementChild.innerHTML == "No Card Found") {
 
   } else {
-   document.getElementById('SearchTerm').value = this.event.target.parentElement.firstElementChild.innerHTML;
-   document.SearchForm.submit();
+    document.getElementById('SearchTerm').value = this.event.target.parentElement.firstElementChild.innerHTML;
+    document.SearchForm.submit();
   }
 }
 
 //--Silly Little Scroll to Top Function
- var mybutton = document.getElementById("TopButton");
- document.addEventListener("scroll", async(event) => {
-   console.log(scrollY)
+var mybutton = document.getElementById("TopButton");
+document.addEventListener("scroll", async(event) => {
+  console.log(scrollY)
   if (scrollY > "250") {
     mybutton.style.display = "block";
   } else {
-     mybutton.style.display = "none";
+    mybutton.style.display = "none";
   }
 });
 
 function ScrollToTop() {
   window.scrollTo(0, 0);
 }
-//Animate This is The Future to Fall down from the Top of the Page
-
-
-
