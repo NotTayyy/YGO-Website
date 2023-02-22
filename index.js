@@ -389,3 +389,4 @@ document.querySelectorAll('.cardshowcase div.cardsc img').forEach(image => {
     document.querySelector('.image-popup').style.display = 'none'; 
   }
 })
+//dds
