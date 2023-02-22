@@ -1,10 +1,15 @@
 //--Randomization Of The Header Background Image
-const headerBG = ["url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)", "url(Images/Header/HBG3.jpg)", "url(Images/Header/HBG4.jpg)", 
-  "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", 
-  "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)", "url(Images/Header/HBG11.jpg)", "url(Images/Header/HBG12.jpg)"];
+const headerBG = [
+  "url(Images/Header/HBG1.jpg)", "url(Images/Header/HBG2.jpg)",
+  "url(Images/Header/HBG3.jpg)", "url(Images/Header/HBG4.jpg)",
+  "url(Images/Header/HBG5.jpg)", "url(Images/Header/HBG6.jpg)", 
+  "url(Images/Header/HBG7.jpg)", "url(Images/Header/HBG8.jpg)", 
+  "url(Images/Header/HBG9.jpg)", "url(Images/Header/HBG10.jpg)", 
+  "url(Images/Header/HBG11.jpg)", "url(Images/Header/HBG12.jpg)"
+  ];
 
-function getAPI() {
-  fetch('https://ygo-site-backend.herokuapp.com/card', {
+async function getAPI() {
+  await fetch('https://ygo-site-backend.herokuapp.com/card', {
     method: 'GET',
     headers: {
       accept: 'application/json',
@@ -12,15 +17,19 @@ function getAPI() {
   }) 
     .then(function(response) {
       return response.json();
-})
+    })
     .then(function(data) {
       cardAPIListings = data;
       RandomCard();
-    });
+    })
+    .then(function() {
+
+    })
+    ;
 }
 
-function getStaples() {
-  fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?staple=yes', {
+async function getStaples() {
+  await fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?staple=yes', {
     method: 'GET',
     headers: {
       accept: 'application/json',
@@ -351,6 +360,32 @@ document.addEventListener("scroll", async(event) => {
   }
 });
 
+const reloadBtn = document.getElementById('reloadRnd');
+const reloadStl = document.getElementById('reloadStl')
+
+reloadBtn.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+  RandomCard();
+})
+
+reloadStl.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+  stapleOfDay();
+})
+
 function ScrollToTop() {
   window.scrollTo(0, 0);
 }
+
+document.querySelectorAll('.cardshowcase div.cardsc img').forEach(image => {
+  image.onclick = () => {
+    document.querySelector('.image-popup').style.display = 'block'; 
+    document.querySelector('.image-popup img').src = image.getAttribute('src')
+  }
+
+  document.querySelector('.image-popup > span').onclick = () => {
+    document.querySelector('.image-popup').style.display = 'none'; 
+  }
+})
