@@ -22,15 +22,15 @@ body {
     width: 100px;
     height: 100px;
     background-size: 100px;
-    position: absolute;
-    top: 760px;
+    position: relative;
+    top: 110px; left: 10px;
+    overflow: visible;
+    z-index: 2;
 }
-
-.popReload {top: 1476px;}
 
 .reload:hover, .popReload:hover, #popimg:hover, #randomImage:hover {
     transform: scale(1.1);
-    transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .image-popup {
@@ -54,7 +54,6 @@ body {
     z-index: 99;
 }
 
-
 .image-popup img {
     position: absolute;
     top: 50%; left: 50%;
@@ -66,7 +65,6 @@ body {
     object-fit: cover;
     z-index: 101;
 }
-
 
 p {
     margin: 0 30px;
@@ -482,8 +480,7 @@ a.highlight:hover {
 }
 
 .TwitterShowcase {
-    background-color: #024058;
-    width: 80%;
+    width: auto;
     margin: 0 auto;
 }
 
